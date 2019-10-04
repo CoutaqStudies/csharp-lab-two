@@ -38,7 +38,7 @@ namespace LabTwo
                     Console.Write("Incorrect input, try again: ");
                 }
             }
-            for (int i = 0; i < q; i++)
+            for (int i = 0; i > q; i++)
             {
                 double num = Math.Pow(x, 2 * i) / Factorial(i * 2);
                 if (Math.Abs(num) < q)
