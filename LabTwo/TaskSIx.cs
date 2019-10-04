@@ -1,12 +1,11 @@
 ﻿using System;
 namespace LabTwo
 {
-    public class TaskFive
+    public class TaskSix
     {
-        public TaskFive()
+        public TaskSix()
         {
         }
-
         internal static void Do()
         {
             int n;
@@ -16,7 +15,7 @@ namespace LabTwo
                 try
                 {
                     n = int.Parse(Console.ReadLine());
-                    if (n < 0)
+                    if (n < 1 && n > 100)
                     {
                         throw new FormatException();
                     }
@@ -27,24 +26,17 @@ namespace LabTwo
                     Console.Write("Incorrect input, try again: ");
                 }
             }
-            Boolean comb = false;
-            for(int i = 0; i <= n; i++)
+            if (n%10 == 1)
             {
-                for(int j = 0; j <= n; j++)
-                {
-                    for(int k = 0; k <= n; k++)
-                    {
-                        if((Math.Pow(i, 3) + Math.Pow(j, 3) + Math.Pow(k, 3) == n))
-                        {
-                            Console.WriteLine("x: " + i+"; y: "+j+"; z: "+k+";");
-                            comb = true;
-                        }
-                    }
-                }
+                Console.WriteLine(n + " год.");
             }
-            if (!comb)
+            else if (n%10>=5)
             {
-                Console.WriteLine("No such combinations!");
+                Console.WriteLine(n + " лет.");
+            }
+            else
+            {
+                Console.WriteLine(n + " года.");
             }
         }
     }

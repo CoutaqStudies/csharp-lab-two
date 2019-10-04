@@ -1,9 +1,9 @@
 ﻿using System;
 namespace LabTwo
 {
-    public class TaskFive
+    public class TaskEight
     {
-        public TaskFive()
+        public TaskEight()
         {
         }
 
@@ -16,7 +16,7 @@ namespace LabTwo
                 try
                 {
                     n = int.Parse(Console.ReadLine());
-                    if (n < 0)
+                    if (n < 1 && n > 10000)
                     {
                         throw new FormatException();
                     }
@@ -27,24 +27,18 @@ namespace LabTwo
                     Console.Write("Incorrect input, try again: ");
                 }
             }
-            Boolean comb = false;
-            for(int i = 0; i <= n; i++)
+            for(int i = 1; i <= n; i+=2)
             {
-                for(int j = 0; j <= n; j++)
+                if (n % i == 0 )
                 {
-                    for(int k = 0; k <= n; k++)
-                    {
-                        if((Math.Pow(i, 3) + Math.Pow(j, 3) + Math.Pow(k, 3) == n))
-                        {
-                            Console.WriteLine("x: " + i+"; y: "+j+"; z: "+k+";");
-                            comb = true;
-                        }
-                    }
+                        Console.WriteLine(i);
                 }
             }
-            if (!comb)
+            Boolean a  = true;
+            switch (a)
             {
-                Console.WriteLine("No such combinations!");
+                default:
+                    break;
             }
         }
     }

@@ -6,7 +6,7 @@ namespace LabTwo
     {
         static void Main(string[] args)
         {
-            TaskFive.Do();
+            TaskEight.Do();
         }
     }
 }
