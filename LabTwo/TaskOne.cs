@@ -7,7 +7,7 @@ namespace LabTwo
         internal static void Do()
         {
             int a, b, c;
-            double x1, x2;
+            double x1, x2, x,y;
             Console.Write("Please enter a: ");
             while (true)
             {
@@ -50,8 +50,12 @@ namespace LabTwo
             int D = b * b - 4 * a * c;
             if (D < 0)
             {
-                //i dont understand the assingment; TODO: understand math
-            }else if(D == 0)
+                x = -b/2;
+                y = Math.Sqrt(Math.Abs(D))/2;
+                Console.WriteLine("X1: " + x + "+" + y + "i;");
+                Console.WriteLine("X2: " + x + "-" + y + "i;");
+            }
+            else if(D == 0)
             {
                 x1 = -b / (2 * a);
                 Console.WriteLine("X: "+x1);

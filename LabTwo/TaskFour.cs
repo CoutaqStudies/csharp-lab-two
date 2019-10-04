@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+
 namespace LabTwo
 {
     public class TaskFour
@@ -6,11 +8,9 @@ namespace LabTwo
         public TaskFour()
         {
         }
-
         internal static void Do()
         {
-            int q;
-            double x;
+            double x, q;
             double cos = 1;
             Console.Write("Please enter x: ");
             while (true)
@@ -30,7 +30,7 @@ namespace LabTwo
             {
                 try
                 {
-                    q = int.Parse(Console.ReadLine());
+                    q = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     break;
                 }
                 catch (FormatException)
@@ -38,15 +38,12 @@ namespace LabTwo
                     Console.Write("Incorrect input, try again: ");
                 }
             }
-            for (int i = 0; i > q; i++)
+            int i = 0;
+            while (true)
             {
+            i++;
                 double num = Math.Pow(x, 2 * i) / Factorial(i * 2);
-                if (Math.Abs(num) < q)
-                {
-                    Console.WriteLine("q: " +i+1);
-                    break;
-                }
-                if (i % 2 == 0)
+                if (i % 2 != 0)
                 {
                     cos -= num;
                 }
@@ -54,18 +51,19 @@ namespace LabTwo
                 {
                     cos += num;
                 }
+                if (Math.Abs(num) < q)
+                {
+                    break;
+                }
             }
             Console.WriteLine("cos(" + x + ") = " + cos);
         }
-        public static int Factorial(int number)
+        public static ulong Factorial(int ff)
         {
-            int result = 1;
-            while (number != 1)
-            {
-                result *= number;
-                number -= 1;
-            }
-            return result;
+            ulong f = 1;
+            for (int i = 1; i <= ff; i++)
+                f = f * (ulong)i;
+            return f;
         }
     }
 }
