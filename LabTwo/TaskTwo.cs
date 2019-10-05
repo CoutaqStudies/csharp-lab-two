@@ -9,14 +9,14 @@ namespace LabTwo
 
         internal static void Do()
         {
-            int a;
+            ulong a;
             double pi = 1;
             Console.Write("Please enter your number: ");
             while (true)
             {
                 try
                 {
-                    a = int.Parse(Console.ReadLine());
+                    a = ulong.Parse(Console.ReadLine());
                     if (a <= 0)
                     {
                         throw new FormatException();
@@ -28,7 +28,7 @@ namespace LabTwo
                     Console.Write("Incorrect input, try again: ");
                 }
             }
-            for(int i = 1; i <= a; i++)
+            for(ulong i = 1; i <= a; i++)
             {
                 if (i % 2 == 0)
                 {
